@@ -49,6 +49,21 @@
 // this will have an inline style called marginright and it will help us differenciate whether it is mymessage or theirmessage by using iternery
 
 
+// Now I am creating the structure of the chat feed
+// create two divs with a className of chat-feed and the other with chat-title-container
+// inside of the chat title container add one more div with a className of chat-title
+// within that div type in {chat?.title}</div> to render the chat title the question mark ensures that we have the chat before we access the title variable 
+//  we need to add a check before our chat feed return statement
+// if(!chat) return 'Loading...'; this means that if there is no chat then we need to return a string of loading
+// remove the ? beacuse we know we will always have our chat
+
+// create another div for the subtitle
+// inside the subtitle div create dynamtic logic {chat.people.map((person) => ` ${person.person.username}`)}
+// that will be the subtitle of the chat
+
+
+// 
+
 
 import MessageForm from './MessageForm';
 import MyMessage from './MyMessage';
@@ -90,9 +105,19 @@ const ChatFeed = (props) => {
     }
     renderMessages()
 
+    if(!chat) return 'Loading...';
+
     return (
-        <div>
-            ChatFeed 
+        <div className="chat-feed">
+            <div className="chat-title-container">
+                <div className="chat-title">{chat.title}</div>
+                <div className="chat-subtitle">
+                {chat.people.map((person) => ` ${person.person.username}`)}
+                </div>
+
+
+            </div>
+             
 
         </div>
     );
