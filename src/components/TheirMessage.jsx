@@ -26,6 +26,13 @@
 // create a selfclosing div with a className called avatar.
 // create inline styles called backgroundimage that is going to set an avatar for the user if they chose one
 
+
+// rendering the messages by the user
+// margins will be set to left because the user is using them
+
+
+// now move on to messageform.jsx
+
 const TheirMessage = ({ message, lastMessage }) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username
     return(
@@ -42,11 +49,11 @@ const TheirMessage = ({ message, lastMessage }) => {
                         src={message.attachments[0].file}
                         alt="message-attachment"
                         className="message-image"
-                        style={{ float: 'right' }}
+                        style={{ marginLeft: isFirstMessageByUser ? '4px' : '48px' }}
 
                     />
                 ) : (
-                    <div className="message" style={{ float: 'right', marginRight: '18px', color: 'white', backgroundColor: '#3B2A50' }}>
+                    <div className="message" style={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px' }}>
                         {message.text}
                     </div>
                 )
