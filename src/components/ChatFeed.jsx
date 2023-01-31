@@ -74,7 +74,9 @@
 // to have access to the actual message inside of the mymessage component, pass a message as a prop <MyMessage message={message} />
 // we are getting the messages from const message = messages[key];
 
-// do the same thing for theirmessage
+// do the same thing for theirmessage but write it with two props like this <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />
+
+// moving on to Mymessage.jsx I am going to create the layout.
 
 
 import MessageForm from './MessageForm';
