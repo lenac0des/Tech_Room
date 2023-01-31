@@ -20,11 +20,39 @@
 // to know that we will write if it is not the last message or if the last message
 // that will give us the boolean value by the user
 
+
+// then inside of the return create a new classname called message row within the div
+// create logic inside of message row {isFirstMessageByUser &&} if it is 
+// create a selfclosing div with a className called avatar.
+// create inline styles called backgroundimage that is going to set an avatar for the user if they chose one
+
 const TheirMessage = ({ message, lastMessage }) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username
     return(
-        <div>
-            TheirMessage
+        <div className="message-row">
+            {isFirstMessageByUser && (
+                <div 
+                    className="message-avatar"
+                    styles={{backgroundImage: `url(${message?.sender?.avatar})`}}
+                />
+            )}
+            {message?.attachments?.length > 0
+                ? (
+                    <img 
+                        src={message.attachments[0].file}
+                        alt="message-attachment"
+                        className="message-image"
+                        style={{ float: 'right' }}
+
+                    />
+                ) : (
+                    <div className="message" style={{ float: 'right', marginRight: '18px', color: 'white', backgroundColor: '#3B2A50' }}>
+                        {message.text}
+                    </div>
+                )
+            }
+
+
         </div>
     );
 }
