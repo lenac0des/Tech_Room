@@ -14,8 +14,9 @@
 
 // create another functional componment for messages that other people will send.
 
+//  the component will have two props called lastmessage and message
 
-const TheirMessage = () => {
+const TheirMessage = ({ message, lastMessage }) => {
     return(
         <div>
             TheirMessage
