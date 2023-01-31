@@ -66,6 +66,15 @@
 // below create a self closing div for space <div style={{ height: '100px' }} />
 // below create another div for forms where the users will be able to send messages
 // this is where message form component will be rendered
+// add props within the messageforms component
+//  this will be the structure of the chat feed
+
+
+
+// to have access to the actual message inside of the mymessage component, pass a message as a prop <MyMessage message={message} />
+// we are getting the messages from const message = messages[key];
+
+// do the same thing for theirmessage
 
 
 import MessageForm from './MessageForm';
@@ -92,8 +101,8 @@ const ChatFeed = (props) => {
                     <div className="message-block">
                         {
                             isMyMessage
-                            ? <MyMessage />
-                            : <TheirMessage />
+                            ? <MyMessage message={message} />
+                            : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />
                         }
 
                     </div>
@@ -121,7 +130,7 @@ const ChatFeed = (props) => {
             {renderMessages()} 
             <div style={{ height: '100px' }} />
             <div className="message-form-container">
-                    <MessageForm />
+                    <MessageForm {...props} chatId={activeChat} />
             </div>
 
         </div>
