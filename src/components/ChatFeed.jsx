@@ -24,7 +24,19 @@
 // cosole.log the destructured props to see if everthing comes up nicely
 
 // after create a functional component called renderMessages replacing the console.log
+// to fecth all of the messages use const keys = Object.keys(messages); this will take the keys from the messages 
+// keys are ids of specific messages
+// lets render the messages by using return keys.map((keys, index) => {
+        //     const message = messages[key];
+        // })
 
+// to know what last message was sent use const lastMessageKey
+// as well as is this my message using isMyMessage
+
+// we are going to see if the lastmessagekey is equall to zeroo by using ..... const lastMessageKey = index === 0 ? null : keys[index - 1]
+// else we return keys- 1... meaning if there are messages make sure this is the last one.
+
+// to check if the message is mine const isMyMessage = userName === message.sender.username;
 
 
 import MessageForm from './MessageForm';
@@ -39,12 +51,19 @@ const ChatFeed = (props) => {
     const chat = chats && chats[activeChat];
 
     const renderMessages = () => {
+        const keys = Object.keys(messages);
 
+        return keys.map((key, index) => {
+            const message = messages[key];
+            const lastMessageKey = index === 0 ? null : keys[index - 1];
+            const isMyMessage = userName === message.sender.username;
+        })
     }
+    renderMessages()
 
     return (
         <div>
-            ChatFeed
+            ChatFeed 
 
         </div>
     );
