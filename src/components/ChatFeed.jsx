@@ -23,6 +23,8 @@
 // this line of code means if chats exist then find the active chat......const chat = chats && chats[activeChat]
 // cosole.log the destructured props to see if everthing comes up nicely
 
+// after create a functional component called renderMessages replacing the console.log
+
 
 
 import MessageForm from './MessageForm';
@@ -36,7 +38,9 @@ const ChatFeed = (props) => {
 
     const chat = chats && chats[activeChat];
 
-    console.log(chat, userName, messages);
+    const renderMessages = () => {
+
+    }
 
     return (
         <div>
