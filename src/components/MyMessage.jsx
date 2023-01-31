@@ -30,7 +30,6 @@
 // Text render notes
 
 // classname goes in the first div with some inline styles
-// 
 
 const MyMessage = ({ message }) => {
     // this will render an image if the message is an image
