@@ -13,7 +13,12 @@
 
 // create funtional component for chat bubble
 
-const MyMessage = () => {
+// the mymessage component will only accept one prop called message
+// underneath the prop add an if check that will ask if our message is the actual text message or an image
+// if it is greater than zero then the messgae is an image if(message?.attachments?.length > 0)
+
+const MyMessage = ({ message }) => {
+    if(message?.attachments?.length > 0)
     return(
         <div>
             MyMessage
