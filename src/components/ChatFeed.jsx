@@ -20,7 +20,7 @@
 // const { } = props; means that we want to destructre someting from props
 // things that will be destructured are const { chats, activeChat, userName, messages } = props;
 // to find our current chat we have to put it in a variable...  const chat = 
-// this line of code means if chats exist then find the active chat......const chat = chats && chats[activeChats]
+// this line of code means if chats exist then find the active chat......const chat = chats && chats[activeChat]
 // cosole.log the destructured props to see if everthing comes up nicely
 
 
@@ -34,7 +34,7 @@ import TheirMessage from './TheirMessage';
 const ChatFeed = (props) => {
     const { chats, activeChat, userName, messages } = props;
 
-    const chat = chats && chats[activeChats];
+    const chat = chats && chats[activeChat];
 
     console.log(chat, userName, messages);
 
