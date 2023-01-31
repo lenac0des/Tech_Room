@@ -22,13 +22,19 @@ import './App.css';
 // userSecret is basically the users password
 //  after creating all the props I went to chat engine dashboard to create the project
 
+// Goto chatengine.io create an account and make a new project
+// then the first step is to obtain your api key which is going to be you projectID then paste it into projectID
+// after create your first user within chatengine and this will me the admin which is me
+// next step is to create a chat name it whatever you want
+// once the chat room is created on chat engine.io type in the admin username and password
+
 const App = () => {
     return (
         <ChatEngine 
             height="100vh"
             projectID="7f08ace2-0ed8-4617-82a1-4314da18904f"
-            userName=""
-            userSecret=""
+            userName="lenac0des"
+            userSecret="apples"
         />
     );
 }
