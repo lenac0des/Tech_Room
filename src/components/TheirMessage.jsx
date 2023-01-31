@@ -15,7 +15,7 @@
 // create another functional componment for messages that other people will send.
 
 
-const TheirMessage () => {
+const TheirMessage = () => {
     return(
         <div>
             TheirMessage

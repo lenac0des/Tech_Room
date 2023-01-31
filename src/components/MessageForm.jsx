@@ -12,7 +12,7 @@
 **/
 // create another functional componment
 
-const MessageForm () => {
+const MessageForm = () => {
     return(
         <div>
             MessageForm

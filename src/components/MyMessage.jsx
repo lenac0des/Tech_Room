@@ -13,7 +13,7 @@
 
 // create funtional component for chat bubble
 
-const MyMessage () => {
+const MyMessage = () => {
     return(
         <div>
             MyMessage
