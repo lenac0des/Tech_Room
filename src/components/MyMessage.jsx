@@ -31,6 +31,8 @@
 
 // classname goes in the first div with some inline styles
 
+// then move on to theirmessage
+
 const MyMessage = ({ message }) => {
     // this will render an image if the message is an image
     if(message?.attachments?.length > 0) {
