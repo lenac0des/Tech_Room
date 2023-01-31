@@ -37,6 +37,17 @@
 // else we return keys- 1... meaning if there are messages make sure this is the last one.
 
 // to check if the message is mine const isMyMessage = userName === message.sender.username;
+// now we have all the information needed to create different types of messages
+
+
+// inside of the map we are going to create a return statement and add a div that is going to act as our message
+// since we are still mapping create a key within the div and add an inline style
+// then create another div underneath with a classname message block and render a message inside
+// saying if this is my message render message if not then render their message
+
+// create another div underneath with a classname called read receiepts
+// this will have an inline style called marginright and it will help us differenciate whether it is mymessage or theirmessage by using iternery
+
 
 
 import MessageForm from './MessageForm';
@@ -57,6 +68,24 @@ const ChatFeed = (props) => {
             const message = messages[key];
             const lastMessageKey = index === 0 ? null : keys[index - 1];
             const isMyMessage = userName === message.sender.username;
+
+            return (
+                <div key={`msg_${index}`} style={{ width: '100%' }}>
+                    <div className="message-block">
+                        {
+                            isMyMessage
+                            ? <MyMessage />
+                            : <TheirMessage />
+                        }
+
+                    </div>
+
+                    <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>
+                    read-receipts
+                    </div>
+
+                </div>
+            );
         })
     }
     renderMessages()
