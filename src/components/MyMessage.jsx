@@ -42,7 +42,7 @@ const MyMessage = ({ message }) => {
             />
         )
     }
-
+// The text messages will be rendered here
     return(
         <div>
             MyMessage
