@@ -24,6 +24,10 @@
 // then add the className set it to message image'
 // finally inline styles which will have the message float to the right
 
+
+
+// Text render
+
 const MyMessage = ({ message }) => {
     // this will render an image if the message is an image
     if(message?.attachments?.length > 0) {
