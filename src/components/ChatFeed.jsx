@@ -12,7 +12,8 @@
 **/
 // create a functional componenet
 // the chat feed will use 3 different componemts which I will create
-// first componment is messageforms.jsx
+// first componment is messageform.jsx
+// seccond component is mymessage.jsx
 
 
 const ChatFeed = (props) => {
