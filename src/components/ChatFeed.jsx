@@ -63,6 +63,9 @@
 
 
 // below the subtitle div this is where the rendered messages will be called
+// below create a self closing div for space <div style={{ height: '100px' }} />
+// below create another div for forms where the users will be able to send messages
+// this is where message form component will be rendered
 
 
 import MessageForm from './MessageForm';
@@ -116,6 +119,10 @@ const ChatFeed = (props) => {
                 </div>
             </div>
             {renderMessages()} 
+            <div style={{ height: '100px' }} />
+            <div className="message-form-container">
+                    <MessageForm />
+            </div>
 
         </div>
     );
