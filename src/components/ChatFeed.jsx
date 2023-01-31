@@ -62,7 +62,7 @@
 // that will be the subtitle of the chat
 
 
-// 
+// below the subtitle div this is where the rendered messages will be called
 
 
 import MessageForm from './MessageForm';
@@ -114,10 +114,8 @@ const ChatFeed = (props) => {
                 <div className="chat-subtitle">
                 {chat.people.map((person) => ` ${person.person.username}`)}
                 </div>
-
-
             </div>
-             
+            {renderMessages()} 
 
         </div>
     );
