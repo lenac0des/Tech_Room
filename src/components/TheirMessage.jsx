@@ -16,7 +16,12 @@
 
 //  the component will have two props called lastmessage and message
 
+// if we want to know if somebody sent you a text first you want to create a variable called const isFirstMessageByUser
+// to know that we will write if it is not the last message or if the last message
+// that will give us the boolean value by the user
+
 const TheirMessage = ({ message, lastMessage }) => {
+    const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username
     return(
         <div>
             TheirMessage
