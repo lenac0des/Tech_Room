@@ -29,6 +29,9 @@
 
 // Text render notes
 
+// classname goes in the first div with some inline styles
+// 
+
 const MyMessage = ({ message }) => {
     // this will render an image if the message is an image
     if(message?.attachments?.length > 0) {
@@ -44,8 +47,8 @@ const MyMessage = ({ message }) => {
     }
 // The text messages will be rendered here
     return(
-        <div>
-            MyMessage
+        <div className="message" style={{ float: 'right', marginRight: '18px', color: 'white', backgroundColor: '#3B2A50' }}>
+            {message.text}
         </div>
     );
 }
