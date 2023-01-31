@@ -13,7 +13,8 @@
 // create a functional componenet
 // the chat feed will use 3 different componemts which I will create
 // first componment is messageform.jsx
-// seccond component is mymessage.jsx
+// seccond component is mymessage.jsx for the chat bubble
+// theird component is theirmessage.jsx for messages that other people will send
 
 
 const ChatFeed = (props) => {
