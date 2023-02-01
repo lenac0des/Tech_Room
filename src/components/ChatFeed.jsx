@@ -78,6 +78,9 @@
 
 // moving on to Mymessage.jsx I am going to create the layout.
 
+// now we are going to work on read receiepts
+
+
 
 import MessageForm from './MessageForm';
 import MyMessage from './MyMessage';
@@ -89,6 +92,22 @@ const ChatFeed = (props) => {
     const { chats, activeChat, userName, messages } = props;
 
     const chat = chats && chats[activeChat];
+// add read receipts function with two parameter
+// and then map over the people who read the messages
+// we only want to render the people who read the messages
+    const renderReadReceipts = (message, isMyMessage) => {
+        return chat.people.map((person, index) => person.last_read === message.id && (
+            // code gets rendered here only if the person had read the message
+            <div 
+                key={`read__${index}`}
+                className="read-receipt"
+                style={{
+                    float: isMyMessage ? 'right' : 'left',
+                    backgroundImage: `url(${person?.person?.avatar})`
+                }}
+            />
+        ))
+    }
 
     const renderMessages = () => {
         const keys = Object.keys(messages);
@@ -110,7 +129,8 @@ const ChatFeed = (props) => {
                     </div>
 
                     <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>
-                    read-receipts
+                    {/* to call the render read receipts above in line 98 we have to put it in a logical block down here */}
+                        {renderReadReceipts(message, isMyMessage)}
                     </div>
 
                 </div>
