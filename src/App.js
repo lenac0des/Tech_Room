@@ -14,6 +14,8 @@ import { ChatEngine } from 'react-chat-engine';
 
 import ChatFeed from './components/ChatFeed';
 
+import LoginForm from './components/LoginForm';
+
 import './App.css';
 
 // create a simple functional component for chat engine
@@ -36,9 +38,15 @@ import './App.css';
 // because chatfeed is a component you have to import it
 // continued in chatfeed.jsx
 
+// a new component login form will be created to have users login dynamitcally
+
 
 
 const App = () => {
+    // to prevent rendering the chat engine all the time especially when were are not loggin create an if check statement
+    // if not logged in return the login form
+    if(!localStorage.getItem('username')) return <LoginForm />
+
     return (
         <ChatEngine 
             height="100vh"
