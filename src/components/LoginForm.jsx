@@ -23,6 +23,10 @@ import axios from 'axios';
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    // adding one more usestate field for error loggin
+    // add it to the catch function
+    const [error, setError] = useState('');
+
 
     const handleSubmit = async (e) => {
         // the first step to a handle submit is the default to prevent the browser from refreshing
@@ -46,7 +50,7 @@ const LoginForm = () => {
             // go back to app.js to add an if statement
             window.location.reload();
         } catch (error) {
-            
+            setError('Ooops, incorrect credentials. ')
         }
     }
 
@@ -64,8 +68,8 @@ const LoginForm = () => {
                         <button type="submit" className="button">
                             <span>Start Chatting</span>
                         </button>
-
                     </div>
+                    <h2 className="error">{error}</h2>
                 </form>
             </div>
 
